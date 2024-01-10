@@ -7,6 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json({ limit: "10mb" }));
 app.use(require("morgan")("dev"));
+app.use(express.static(`${__dirname}/public`));
 
 app.use("/user", require("./routers/authRoutes"));
 app.use("/profile", require("./routers/userRoutes"));
