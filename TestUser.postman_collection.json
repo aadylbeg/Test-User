@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "14a8d999-2af5-4876-8121-cfdcf7178097",
+		"name": "TestUser",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"user@example.com\",\r\n    \"password\": \"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:1122/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "1122",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"User\",\r\n    \"email\": \"user@example.com\",\r\n    \"password\": \"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:1122/user/register",
+					"host": [
+						"localhost"
+					],
+					"port": "1122",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA0ODc2MjE0LCJleHAiOjE3MDQ5NjI2MTR9.XStCR2ckIh6sF6LmXD1aGk-RKDw1n33CmTnOcl2ikY4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:1122/profile?page=1",
+					"host": [
+						"localhost"
+					],
+					"port": "1122",
+					"path": [
+						"profile"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA0ODc2MjE0LCJleHAiOjE3MDQ5NjI2MTR9.XStCR2ckIh6sF6LmXD1aGk-RKDw1n33CmTnOcl2ikY4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:1122/profile/1",
+					"host": [
+						"localhost"
+					],
+					"port": "1122",
+					"path": [
+						"profile",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA0ODc2MjE0LCJleHAiOjE3MDQ5NjI2MTR9.XStCR2ckIh6sF6LmXD1aGk-RKDw1n33CmTnOcl2ikY4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lastName\": \"Resu\",\r\n    \"sex\": \"female\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:1122/profile/1",
+					"host": [
+						"localhost"
+					],
+					"port": "1122",
+					"path": [
+						"profile",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Uplaod Photo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA0ODc2MjE0LCJleHAiOjE3MDQ5NjI2MTR9.XStCR2ckIh6sF6LmXD1aGk-RKDw1n33CmTnOcl2ikY4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/Adylbek/Desktop/images/profile/pexels-photo-5490235.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:1122/profile/image/1",
+					"host": [
+						"localhost"
+					],
+					"port": "1122",
+					"path": [
+						"profile",
+						"image",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Photo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA0ODc2MjE0LCJleHAiOjE3MDQ5NjI2MTR9.XStCR2ckIh6sF6LmXD1aGk-RKDw1n33CmTnOcl2ikY4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:1122/profile/image/1",
+					"host": [
+						"localhost"
+					],
+					"port": "1122",
+					"path": [
+						"profile",
+						"image",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
